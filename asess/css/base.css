@@ -1,0 +1,257 @@
+:root {
+    --primary-color: #ee4d2d;
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --boder-color:#dbdbdb;
+    --gold-star: #ffce3e;
+
+    --header-height: 120px;
+    --nav-bar-height: 32px;
+    --search-height:calc(var(--header-height) - var(--nav-bar-height));
+    --header-short-bar-height: 46px;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+/* Test */
+.grid__colunm-2 {
+    width: 16.6667%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.grid__colunm-2-4 {
+    width: 20%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.grid__colunm-3{
+    width: 25%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.grid__colunm-10 {
+    width: 83.3334%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes Groth {
+    from {
+        transform: scale(0.5);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+/* Modal */
+.modal.open_modal {
+    display: flex;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    animation: fadeIn linear .2s;
+    display: none;
+}
+
+.modal__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0,0,0.4);
+}
+
+.modal__body {
+    margin: auto;
+    z-index: 1;
+    animation: Groth ease-in .2s;
+}
+
+/* button style */
+.btn {
+    height: 34px;
+    min-width: 124px;
+    display: inline-flex;
+    line-height: 1.6;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0 12px;
+    outline: none; 
+    border: none;
+    border-radius: 2px;
+    border-color: transparent;
+    text-decoration: none;
+    color: var(--text-color);
+    background-color: var(--white-color);
+}
+
+.btn--back {
+    margin-right: 4px;
+}
+
+.btn.btn-primary {
+    line-height: 0;
+    color: var(--white-color);
+    background-color: var(--primary-color) ;
+}
+
+.btn.btn--back:hover {
+    color: var(--text-color);
+    background-color: rgba(0, 0,0,0.05);
+}
+
+.btn.btn--disable {
+     cursor: default;
+     background-color: #999;
+     color: #949494;
+}
+
+/* Selection */
+.select-input {
+    position: relative;
+    min-width: 200px;
+    height: 34px;
+    padding: 0 12px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.select-input__label {
+    position: relative;
+    top: 1px;
+    font-size: 1.4rem;
+    color: rgb(131, 131, 131);
+}
+
+.select-input:hover .select-input__list {
+    display: block;
+}
+
+.select-input__list {
+    position: absolute;
+    width: 100%;
+    top: 24px;
+    list-style: none;
+    left: 0;
+    right: 0;
+    border-radius: 2px;
+    padding: 10px 12px ;
+    background-color: var(--white-color);
+    display: none;
+    z-index: 1;
+}
+
+.select-input__item {
+
+}
+
+.select-input__link {
+    display: block;
+    padding: 10px 0;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.select-input__link:hover {
+    color: var(--primary-color);
+}
+
+/* Page */
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.page-item {
+    padding: 8px;
+    margin: 0 16px;
+    --height:30px;
+    display:block;
+    font-weight:300;
+    text-decoration:none;
+    font-size:2rem;
+    color:#939393;
+    min-width:40px;
+    height:var(-- height);
+    line-height:var(-- height);
+    text-align:center;
+    border-radius:2px;
+}
+
+
+.page-item-arrow:hover .page-item-icon {
+    cursor: pointer;
+    opacity: 1.5;
+    transform: scale(1.2);
+}
+
+.page-item--current {
+    background-color: var(--primary-color);
+}
+
+.page-item-icon {
+    font-size: 1.6rem;
+    color: var(--text-color);
+}
+
+.page-item--current .page-number {
+    color: var(--white-color);
+}
+
+.page-item--current:hover {
+    background-color: #ce5138;
+    cursor: pointer;
+}
+
+.page-item:hover  {
+    transform: scale(1.05);
+}
+
+.page-number {
+    padding: 6px;
+    font-size: 1.6rem;
+    color: #757575;
+    cursor: pointer;
+}
